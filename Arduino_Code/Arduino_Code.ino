@@ -15,7 +15,7 @@
 #define MAXANALOG     1024
 #define MINANALOG     0
 #define TIMERDELAY    3000
-#define DEBOUNCEDELAY 40
+#define DEBOUNCEDELAY 50
 
 long Timer = 0;
 long Debounce = 0;
@@ -122,7 +122,7 @@ void loop(){
     ReadAnalog(AnalogPin);
   } else{
     
-    delay(100);  
+    delay(DEBOUNCEDELAY);  
   }
 
   if(ButtonState[Npin-2] == 1 && ButtonState[Npin-1] == 1 && Timer>0 && mod == 0){
