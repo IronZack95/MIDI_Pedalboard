@@ -20,7 +20,8 @@ void Auto(){
 
   for(int i = 0; i < Npin-2; i++){
     if(ButtonState[i] == 1){
-        MIDImessage(STATUS_base + MidiChannel, data1_base + (Npin-2)*page + i, data2_base);
+        //MIDImessage(STATUS_base + MidiChannel, data1_base + (Npin-2)*page + i, data2_base);
+        SERIALmessage(data1_base + (Npin-2)*page + i, analogRead(AnalogPin));
       }
     }
 

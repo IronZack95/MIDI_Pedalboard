@@ -16,3 +16,10 @@ void MIDImessage(byte status, byte data1, byte data2)
   Serial.write(data1);
   Serial.write(data2);
 }
+
+void SERIALmessage(byte tag, byte data)
+{
+  Serial.print(tag); //Serial.print("d");
+  Serial.print(data);
+  Serial.print("a");  //divisore
+}
