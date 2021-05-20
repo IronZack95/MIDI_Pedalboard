@@ -17,6 +17,17 @@
 #define TIMERDELAY    3000
 #define DEBOUNCEDELAY 50
 
+// Ulstarzonic Sensor
+
+#include "SR04.h"
+#define TRIG_PIN 12
+#define ECHO_PIN 11
+
+SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
+long dist;
+long last_dist;
+#define threshold 10
+
 long Timer = 0;
 long Debounce = 0;
 int page = 0;         
@@ -116,6 +127,9 @@ void loop(){
   for(int i = 0; i < Npin; i = i + 1){
     ReadButton(i);
   }
+
+  //Leggo Sensore Ultrasuoni
+  Sonic();
   
   //Leggo Potenziometro
   if(mod == 1){
