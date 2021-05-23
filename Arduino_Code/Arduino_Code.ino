@@ -26,7 +26,7 @@
 SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
 long dist;
 long last_dist;
-#define threshold 10
+#define threshold 2
 
 long Timer = 0;
 long Debounce = 0;
